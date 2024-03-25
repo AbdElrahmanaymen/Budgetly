@@ -13,4 +13,6 @@ class Assets {
       'assets/images/icons/calendar_unactive.png';
   static const String calendarActive =
       'assets/images/icons/calendar_active.png';
+  static const String getStartedVector =
+      'assets/images/vectors/get_started.png';
 }

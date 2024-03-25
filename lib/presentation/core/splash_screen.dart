@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
       const Duration(seconds: 1),
-      () => Navigator.pushNamed(context, '/app'),
+      () => Navigator.pushNamed(context, '/GetStarted'),
     );
   }
 

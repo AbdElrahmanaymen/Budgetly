@@ -10,7 +10,12 @@ class NavBarState with _$NavBarState {
 
   factory NavBarState.initial() => NavBarState(
         activeIndex: 0,
-        screens: [],
+        screens: const [
+          HomeScreen(),
+          AccountsScreen(),
+          CalendarScreen(),
+          SettingsScreen()
+        ],
         items: [
           NavBarItem(
             index: 0,

@@ -11,6 +11,12 @@ ThemeData budgetlyThemeData() {
         fontSize: 48,
         color: Colors.white,
       ),
+      labelLarge: TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 24,
+        color: Colors.white,
+        fontWeight: FontWeight.w500,
+      ),
     ),
   );
 }
