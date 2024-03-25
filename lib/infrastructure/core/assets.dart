@@ -15,4 +15,7 @@ class Assets {
       'assets/images/icons/calendar_active.png';
   static const String getStartedVector =
       'assets/images/vectors/get_started.png';
+  static const String appleLogo = 'assets/images/icons/apple_logo.svg';
+  static const String googleLogo = 'assets/images/icons/google_logo.svg';
+  static const String facebookLogo = 'assets/images/icons/facebook_logo.svg';
 }

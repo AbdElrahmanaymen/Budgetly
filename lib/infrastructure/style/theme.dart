@@ -17,6 +17,11 @@ ThemeData budgetlyThemeData() {
         color: Colors.white,
         fontWeight: FontWeight.w500,
       ),
+      titleSmall: TextStyle(
+        fontFamily: 'Roboto',
+        fontSize: 14,
+        color: Colors.white,
+      ),
     ),
   );
 }

@@ -32,7 +32,7 @@ class GetStartedScreen extends StatelessWidget {
                 backgroundColor: darkBlueColor,
                 padding: const EdgeInsets.symmetric(vertical: 12),
               ),
-              onPressed: () => Navigator.pushNamed(context, '/Login'),
+              onPressed: () => Navigator.pushNamed(context, '/Welcome'),
               child: Text(
                 'Get Started',
                 style: Theme.of(context).textTheme.labelLarge,

@@ -16,6 +16,8 @@ dependencies:
   flutter_bloc: ^8.1.4
   injectable: ^2.3.5
   dartz: ^0.10.1
+  dropdown_button2: ^2.3.9
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +35,7 @@ flutter:
     - assets/images/
     - assets/images/icons/
     - assets/images/vectors/
+    - assets/images/countries_flags/
 
   fonts:
     - family: Syntha
@@ -45,4 +48,7 @@ flutter:
           weight: 500
         - asset: assets/fonts/Montserrat-ExtraBold.ttf
           weight: 800
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
 
