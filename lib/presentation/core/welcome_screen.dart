@@ -38,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
   Center textUnderlineButton(BuildContext context) {
     return Center(
       child: GestureDetector(
-        onTap: () {},
+        onTap: () => Navigator.pushNamed(context, '/App'),
         child: Text(
           "Continue as a Guest",
           textAlign: TextAlign.center,
@@ -65,21 +65,21 @@ class SocialMediaLoginSection extends StatelessWidget {
         BudgetlyButtons.iconButton(
           label: 'Continue with Apple',
           icon: SvgPicture.asset(Assets.appleLogo),
-          onBtnPressed: () {},
+          onBtnPressed: () => Navigator.pushNamed(context, '/App'),
           context: context,
         ),
         const SizedBox(height: 16),
         BudgetlyButtons.iconButton(
           label: 'Continue with Google',
           icon: SvgPicture.asset(Assets.googleLogo),
-          onBtnPressed: () {},
+          onBtnPressed: () => Navigator.pushNamed(context, '/App'),
           context: context,
         ),
         const SizedBox(height: 16),
         BudgetlyButtons.iconButton(
           label: 'Continue with Facebook',
           icon: SvgPicture.asset(Assets.facebookLogo),
-          onBtnPressed: () {},
+          onBtnPressed: () => Navigator.pushNamed(context, '/App'),
           context: context,
         )
       ],
@@ -146,7 +146,7 @@ class PhoneNumberSection extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            onPressed: () {},
+            onPressed: () => Navigator.pushNamed(context, '/OTP'),
             child: Text(
               'Continue',
               style: Theme.of(context).textTheme.labelLarge,
