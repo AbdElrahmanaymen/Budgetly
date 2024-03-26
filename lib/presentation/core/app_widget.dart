@@ -1,5 +1,6 @@
 import 'package:budgetly/infrastructure/style/theme.dart';
 import 'package:budgetly/presentation/core/app_screen.dart';
+import 'package:budgetly/presentation/core/complete_profile_screen.dart';
 import 'package:budgetly/presentation/core/get_started_screen.dart';
 import 'package:budgetly/presentation/core/otp_screen.dart';
 import 'package:budgetly/presentation/core/splash_screen.dart';
@@ -12,6 +13,7 @@ Map<String, WidgetBuilder> routes = {
   '/GetStarted': (context) => const GetStartedScreen(),
   '/Welcome': (context) => const WelcomeScreen(),
   '/OTP': (context) => const OTPScreen(),
+  '/CompleteProfileScreen': (context) => const CompleteProfileScreen(),
 };
 
 class AppWidget extends StatelessWidget {

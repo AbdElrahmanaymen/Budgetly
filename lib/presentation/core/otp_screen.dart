@@ -1,6 +1,5 @@
 import 'package:budgetly/infrastructure/style/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class OTPScreen extends StatelessWidget {
   const OTPScreen({super.key});
@@ -68,7 +67,8 @@ class OTPScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  onPressed: () => Navigator.pushNamed(context, '/App'),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, '/CompleteProfileScreen'),
                   child: Text(
                     'Continue',
                     style: Theme.of(context).textTheme.labelLarge,

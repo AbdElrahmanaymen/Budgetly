@@ -65,21 +65,24 @@ class SocialMediaLoginSection extends StatelessWidget {
         BudgetlyButtons.iconButton(
           label: 'Continue with Apple',
           icon: SvgPicture.asset(Assets.appleLogo),
-          onBtnPressed: () => Navigator.pushNamed(context, '/App'),
+          onBtnPressed: () =>
+              Navigator.pushNamed(context, '/CompleteProfileScreen'),
           context: context,
         ),
         const SizedBox(height: 16),
         BudgetlyButtons.iconButton(
           label: 'Continue with Google',
           icon: SvgPicture.asset(Assets.googleLogo),
-          onBtnPressed: () => Navigator.pushNamed(context, '/App'),
+          onBtnPressed: () =>
+              Navigator.pushNamed(context, '/CompleteProfileScreen'),
           context: context,
         ),
         const SizedBox(height: 16),
         BudgetlyButtons.iconButton(
           label: 'Continue with Facebook',
           icon: SvgPicture.asset(Assets.facebookLogo),
-          onBtnPressed: () => Navigator.pushNamed(context, '/App'),
+          onBtnPressed: () =>
+              Navigator.pushNamed(context, '/CompleteProfileScreen'),
           context: context,
         )
       ],
