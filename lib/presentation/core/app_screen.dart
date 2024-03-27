@@ -36,7 +36,7 @@ class AppScreen extends StatelessWidget {
               context.read<NavBarBloc>().add(SelectedIndexChanged(item.index));
             },
           ),
-          body: state.screens[state.activeIndex],
+          body: SafeArea(child: state.screens[state.activeIndex]),
         );
       },
     );
