@@ -21,6 +21,9 @@ class NavBarState with _$NavBarState {
           ),
           BudgetlyAppBar(
             title: 'Accounts',
+            icon: Icon(
+              Icons.add,
+            ),
           ),
           BudgetlyAppBar(
             title: 'Calendar',

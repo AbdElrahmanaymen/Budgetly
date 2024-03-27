@@ -61,11 +61,22 @@ class BudgetlyAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ],
                 )
               : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       title!,
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
+                    (icon != null)
+                        ? IconButton(
+                            style: IconButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              padding: EdgeInsets.zero,
+                            ),
+                            onPressed: () {},
+                            icon: icon!,
+                          )
+                        : const SizedBox(),
                   ],
                 ),
         ),
