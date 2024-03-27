@@ -2,6 +2,7 @@ import 'package:budgetly/application/navbar/nav_bar_bloc.dart';
 import 'package:budgetly/infrastructure/core/assets.dart';
 
 import 'package:budgetly/infrastructure/style/colors.dart';
+import 'package:budgetly/presentation/widgets/appbar.dart';
 import 'package:budgetly/presentation/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,14 +15,9 @@ class AppScreen extends StatelessWidget {
     return BlocBuilder<NavBarBloc, NavBarState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: AppBar(
-            title: const Text(
-              'Home',
-              style: TextStyle(color: Colors.white),
-            ),
-            automaticallyImplyLeading: false,
-            backgroundColor: Colors.transparent,
-            elevation: 0,
+          appBar: budgetlyAppBar(
+            context: context,
+            item: state.items.first,
           ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
