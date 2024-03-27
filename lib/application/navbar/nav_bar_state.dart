@@ -6,10 +6,29 @@ class NavBarState with _$NavBarState {
     required int activeIndex,
     required List<Widget> screens,
     required List<NavBarItem> items,
+    required List<PreferredSizeWidget> appBars,
   }) = _NavBarState;
 
   factory NavBarState.initial() => NavBarState(
         activeIndex: 0,
+        appBars: const [
+          BudgetlyAppBar(
+            profile: {
+              'name': 'Christopher',
+              'image':
+                  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            },
+          ),
+          BudgetlyAppBar(
+            title: 'Accounts',
+          ),
+          BudgetlyAppBar(
+            title: 'Calendar',
+          ),
+          BudgetlyAppBar(
+            title: 'Settings',
+          ),
+        ],
         screens: const [
           HomeScreen(),
           AccountsScreen(),

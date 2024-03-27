@@ -2,7 +2,6 @@ import 'package:budgetly/application/navbar/nav_bar_bloc.dart';
 import 'package:budgetly/infrastructure/core/assets.dart';
 
 import 'package:budgetly/infrastructure/style/colors.dart';
-import 'package:budgetly/presentation/widgets/appbar.dart';
 import 'package:budgetly/presentation/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,10 +14,7 @@ class AppScreen extends StatelessWidget {
     return BlocBuilder<NavBarBloc, NavBarState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: budgetlyAppBar(
-            context: context,
-            item: state.items.first,
-          ),
+          appBar: state.appBars[state.activeIndex],
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           floatingActionButton: MediaQuery.of(context).viewInsets.bottom == 0

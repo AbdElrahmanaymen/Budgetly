@@ -2,6 +2,7 @@ import 'package:budgetly/presentation/accounts/accounts_screen.dart';
 import 'package:budgetly/presentation/calendar/calendar_screen.dart';
 import 'package:budgetly/presentation/home/home_screen.dart';
 import 'package:budgetly/presentation/settings/settings_screen.dart';
+import 'package:budgetly/presentation/widgets/appbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:budgetly/infrastructure/models/navbar.dart';
 import 'package:flutter/widgets.dart';

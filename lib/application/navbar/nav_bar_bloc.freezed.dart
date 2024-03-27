@@ -227,6 +227,7 @@ mixin _$NavBarState {
   int get activeIndex => throw _privateConstructorUsedError;
   List<Widget> get screens => throw _privateConstructorUsedError;
   List<NavBarItem> get items => throw _privateConstructorUsedError;
+  List<PreferredSizeWidget> get appBars => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NavBarStateCopyWith<NavBarState> get copyWith =>
@@ -239,7 +240,11 @@ abstract class $NavBarStateCopyWith<$Res> {
           NavBarState value, $Res Function(NavBarState) then) =
       _$NavBarStateCopyWithImpl<$Res, NavBarState>;
   @useResult
-  $Res call({int activeIndex, List<Widget> screens, List<NavBarItem> items});
+  $Res call(
+      {int activeIndex,
+      List<Widget> screens,
+      List<NavBarItem> items,
+      List<PreferredSizeWidget> appBars});
 }
 
 /// @nodoc
@@ -258,6 +263,7 @@ class _$NavBarStateCopyWithImpl<$Res, $Val extends NavBarState>
     Object? activeIndex = null,
     Object? screens = null,
     Object? items = null,
+    Object? appBars = null,
   }) {
     return _then(_value.copyWith(
       activeIndex: null == activeIndex
@@ -272,6 +278,10 @@ class _$NavBarStateCopyWithImpl<$Res, $Val extends NavBarState>
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<NavBarItem>,
+      appBars: null == appBars
+          ? _value.appBars
+          : appBars // ignore: cast_nullable_to_non_nullable
+              as List<PreferredSizeWidget>,
     ) as $Val);
   }
 }
@@ -284,7 +294,11 @@ abstract class _$$NavBarStateImplCopyWith<$Res>
       __$$NavBarStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int activeIndex, List<Widget> screens, List<NavBarItem> items});
+  $Res call(
+      {int activeIndex,
+      List<Widget> screens,
+      List<NavBarItem> items,
+      List<PreferredSizeWidget> appBars});
 }
 
 /// @nodoc
@@ -301,6 +315,7 @@ class __$$NavBarStateImplCopyWithImpl<$Res>
     Object? activeIndex = null,
     Object? screens = null,
     Object? items = null,
+    Object? appBars = null,
   }) {
     return _then(_$NavBarStateImpl(
       activeIndex: null == activeIndex
@@ -315,6 +330,10 @@ class __$$NavBarStateImplCopyWithImpl<$Res>
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<NavBarItem>,
+      appBars: null == appBars
+          ? _value._appBars
+          : appBars // ignore: cast_nullable_to_non_nullable
+              as List<PreferredSizeWidget>,
     ));
   }
 }
@@ -325,9 +344,11 @@ class _$NavBarStateImpl implements _NavBarState {
   const _$NavBarStateImpl(
       {required this.activeIndex,
       required final List<Widget> screens,
-      required final List<NavBarItem> items})
+      required final List<NavBarItem> items,
+      required final List<PreferredSizeWidget> appBars})
       : _screens = screens,
-        _items = items;
+        _items = items,
+        _appBars = appBars;
 
   @override
   final int activeIndex;
@@ -347,9 +368,17 @@ class _$NavBarStateImpl implements _NavBarState {
     return EqualUnmodifiableListView(_items);
   }
 
+  final List<PreferredSizeWidget> _appBars;
+  @override
+  List<PreferredSizeWidget> get appBars {
+    if (_appBars is EqualUnmodifiableListView) return _appBars;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_appBars);
+  }
+
   @override
   String toString() {
-    return 'NavBarState(activeIndex: $activeIndex, screens: $screens, items: $items)';
+    return 'NavBarState(activeIndex: $activeIndex, screens: $screens, items: $items, appBars: $appBars)';
   }
 
   @override
@@ -360,7 +389,8 @@ class _$NavBarStateImpl implements _NavBarState {
             (identical(other.activeIndex, activeIndex) ||
                 other.activeIndex == activeIndex) &&
             const DeepCollectionEquality().equals(other._screens, _screens) &&
-            const DeepCollectionEquality().equals(other._items, _items));
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality().equals(other._appBars, _appBars));
   }
 
   @override
@@ -368,7 +398,8 @@ class _$NavBarStateImpl implements _NavBarState {
       runtimeType,
       activeIndex,
       const DeepCollectionEquality().hash(_screens),
-      const DeepCollectionEquality().hash(_items));
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_appBars));
 
   @JsonKey(ignore: true)
   @override
@@ -381,7 +412,8 @@ abstract class _NavBarState implements NavBarState {
   const factory _NavBarState(
       {required final int activeIndex,
       required final List<Widget> screens,
-      required final List<NavBarItem> items}) = _$NavBarStateImpl;
+      required final List<NavBarItem> items,
+      required final List<PreferredSizeWidget> appBars}) = _$NavBarStateImpl;
 
   @override
   int get activeIndex;
@@ -389,6 +421,8 @@ abstract class _NavBarState implements NavBarState {
   List<Widget> get screens;
   @override
   List<NavBarItem> get items;
+  @override
+  List<PreferredSizeWidget> get appBars;
   @override
   @JsonKey(ignore: true)
   _$$NavBarStateImplCopyWith<_$NavBarStateImpl> get copyWith =>
