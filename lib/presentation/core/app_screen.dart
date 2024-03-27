@@ -14,6 +14,15 @@ class AppScreen extends StatelessWidget {
     return BlocBuilder<NavBarBloc, NavBarState>(
       builder: (context, state) {
         return Scaffold(
+          appBar: AppBar(
+            title: const Text(
+              'Home',
+              style: TextStyle(color: Colors.white),
+            ),
+            automaticallyImplyLeading: false,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           floatingActionButton: MediaQuery.of(context).viewInsets.bottom == 0
@@ -36,7 +45,18 @@ class AppScreen extends StatelessWidget {
               context.read<NavBarBloc>().add(SelectedIndexChanged(item.index));
             },
           ),
-          body: SafeArea(child: state.screens[state.activeIndex]),
+          body: SafeArea(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
+                ),
+                color: darkBlueColor,
+              ),
+              child: state.screens[state.activeIndex],
+            ),
+          ),
         );
       },
     );

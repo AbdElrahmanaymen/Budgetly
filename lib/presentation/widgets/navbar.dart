@@ -8,8 +8,11 @@ Widget budgetlyNavBar({
   required double screenWidth,
   required Function(NavBarItem item) onItemTapped,
 }) {
-  return SizedBox(
+  return Container(
     height: 100,
+    decoration: BoxDecoration(
+      color: darkBlueColor,
+    ),
     child: Stack(
       children: [
         Positioned(
