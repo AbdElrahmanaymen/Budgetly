@@ -4,7 +4,6 @@ import 'package:budgetly/infrastructure/core/assets.dart';
 import 'package:budgetly/infrastructure/style/colors.dart';
 import 'package:budgetly/presentation/widgets/buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -55,22 +54,41 @@ class HomeScreen extends StatelessWidget {
             'Entertainment': {'Amount': 100, 'Assigned': 0, 'Type': 'Wants'},
           },
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 24,
-          ),
-          child: Text(
+        const EducationalContentSection(),
+        const SizedBox(
+          height: 50,
+        ),
+      ],
+    );
+  }
+}
+
+class EducationalContentSection extends StatelessWidget {
+  const EducationalContentSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 24,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
             "Educational Content",
             style: Theme.of(context)
                 .textTheme
                 .labelSmall!
                 .copyWith(fontWeight: FontWeight.w500),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: SizedBox(
+          const SizedBox(
+            height: 24,
+          ),
+          SizedBox(
             height: 159,
             child: ListView.builder(
               shrinkWrap: true,
@@ -106,11 +124,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        const SizedBox(
-          height: 50,
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
