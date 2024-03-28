@@ -41,15 +41,18 @@ class BudgetlyButtons {
     IconData? icon, // Make the icon parameter optional
     required VoidCallback onPressed,
     required BuildContext context,
+    bool roundedButton = true,
+    double paddingSize = 12,
   }) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
-          padding: const EdgeInsets.all(12.0),
+          padding: EdgeInsets.all(paddingSize),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius:
+                roundedButton ? BorderRadius.circular(10) : BorderRadius.zero,
           ),
         ),
         onPressed: onPressed,
@@ -58,7 +61,10 @@ class BudgetlyButtons {
           children: [
             Text(
               label,
-              style: Theme.of(context).textTheme.labelMedium,
+              style: Theme.of(context)
+                  .textTheme
+                  .labelMedium!
+                  .copyWith(fontWeight: FontWeight.w500),
             ),
             if (icon != null) // Check if icon is provided
               Icon(
