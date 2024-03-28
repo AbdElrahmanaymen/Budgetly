@@ -8,3 +8,10 @@ Welcome to the future of personal finance management with Budgetly. Our zero-bas
 - AI for providing better goals
 - Blockchain for secure env
 - NFT for trading edu content
+
+# Benefits
+- Pay your bills —without breaking a sweat.
+- Figure out how to afford what you actually want.
+- Build a secure (but exciting) financial future.
+
+# Demo
