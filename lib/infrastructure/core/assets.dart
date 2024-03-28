@@ -18,4 +18,5 @@ class Assets {
   static const String appleLogo = 'assets/images/icons/apple_logo.svg';
   static const String googleLogo = 'assets/images/icons/google_logo.svg';
   static const String facebookLogo = 'assets/images/icons/facebook_logo.svg';
+  static const String editIcon = "assets/images/icons/edit.png";
 }
