@@ -21,4 +21,8 @@ class Assets {
   static const String maybankLogo = 'assets/images/logo/maybank.png';
   static const String visaLogo = 'assets/images/logo/visa.png';
   static const String editIcon = "assets/images/icons/edit.png";
+  static const String pencilIcon = "assets/images/icons/pencil.png";
+  static const String userIcon = "assets/images/icons/user.png";
+  static const String phoneIcon = "assets/images/icons/phone.png";
+  static const String emailIcon = "assets/images/icons/email.png";
 }
