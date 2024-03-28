@@ -40,4 +40,33 @@ class BudgetlyTextFields {
       ),
     );
   }
+
+  static Widget settingTextField({
+  required Widget icon, 
+  required String labelText, 
+  required String placeholder}) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 30, left: 39, right: 39), 
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12.0),
+          color: Colors.white,
+        ),
+        child: TextField(
+          decoration: InputDecoration(
+            prefixIcon: icon,
+            labelText: labelText,
+            floatingLabelBehavior: FloatingLabelBehavior.always,
+            hintText: placeholder,
+            hintStyle: TextStyle(
+              fontSize: 16,
+            ),
+            labelStyle: TextStyle(color: Colors.black),
+            border: InputBorder.none,
+            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), 
+          ),
+        ),
+      ),
+    );
+  }
 }
