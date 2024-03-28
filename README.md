@@ -15,3 +15,5 @@ Welcome to the future of personal finance management with Budgetly. Our zero-bas
 - Build a secure (but exciting) financial future.
 
 # Demo
+https://github.com/AbdElrahmanaymen/Budgetly/assets/30832681/8e49e76f-ae59-434b-8f20-cce8b08ac344
+
