@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +21,7 @@ class SettingsScreen extends StatelessWidget {
             },
             context: context,
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           SettingsButton.customButton(
             label: 'Change Password',
             icon: Icons.arrow_forward,
@@ -42,7 +41,7 @@ class SettingsScreen extends StatelessWidget {
             },
             context: context,
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           SettingsButton.customButton(
             label: 'Log Out',
             backgroundColor: darkRedColor,
