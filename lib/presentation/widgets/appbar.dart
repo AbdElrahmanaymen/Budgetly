@@ -4,9 +4,16 @@ import 'package:flutter/material.dart';
 class BudgetlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final Icon? icon;
+  final String? routeName;
   final Map<String, dynamic>? profile;
 
-  const BudgetlyAppBar({super.key, this.title, this.profile, this.icon});
+  const BudgetlyAppBar({
+    super.key,
+    this.title,
+    this.profile,
+    this.icon,
+    this.routeName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +58,7 @@ class BudgetlyAppBar extends StatelessWidget implements PreferredSizeWidget {
                         backgroundColor: darkBlueColor,
                         foregroundColor: lightGreenColor,
                       ),
-                      onPressed: () {},
+                      onPressed: () => Navigator.pushNamed(context, routeName!),
                       icon: const Icon(
                         Icons.notifications_none_outlined,
                         color: Colors.white,
@@ -73,7 +80,8 @@ class BudgetlyAppBar extends StatelessWidget implements PreferredSizeWidget {
                               backgroundColor: Colors.white,
                               padding: EdgeInsets.zero,
                             ),
-                            onPressed: () {},
+                            onPressed: () =>
+                                Navigator.pushNamed(context, routeName!),
                             icon: icon!,
                           )
                         : const SizedBox(),

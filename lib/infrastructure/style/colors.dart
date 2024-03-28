@@ -7,3 +7,4 @@ Color offWhiteColor = const Color(0xFFE7E7E7);
 Color semiBlueColor = const Color(0xFF18116F);
 Color darkRedColor = const Color(0xFF6F1111);
 Color greenColor = const Color(0xFF00FF47);
+Color lightBlueColor = const Color(0xFF2179FD);
