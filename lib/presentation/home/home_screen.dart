@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         const HomeHeader(),
         BudgetlyButtons.settingsButton(
@@ -20,10 +20,32 @@ class HomeScreen extends StatelessWidget {
           paddingSize: 18,
           icon: Icons.arrow_forward_ios,
         ),
-        HomeTile(
+        const HomeTile(
           title: 'Credit Card Payments',
           data: {
             'Christopher Credit': '2,000RM',
+          },
+        ),
+        const HomeTile(
+          title: 'Bills',
+          data: {
+            'Rent': '700RM',
+            'Utilities': '700RM',
+            'Internet': '0RM',
+          },
+        ),
+        const HomeTile(
+          title: 'Needs',
+          data: {
+            'Groceries': '0RM',
+            'Rideshare': '0RM',
+            'Train/Bus fare': '0RM',
+          },
+        ),
+        const HomeTile(
+          title: 'Wants',
+          data: {
+            'Entertainment': '0RM',
           },
         ),
       ],
@@ -65,6 +87,7 @@ class HomeTile extends StatelessWidget {
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: data.length,
+            itemExtent: 50,
             itemBuilder: (context, index) {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
