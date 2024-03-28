@@ -38,6 +38,11 @@ ThemeData budgetlyThemeData() {
         fontSize: 16,
         color: Colors.white,
       ),
+      labelMedium: TextStyle(
+        fontFamily: 'Roboto',
+        fontSize: 18,
+        color: Colors.white,
+      ),
     ),
   );
 }
