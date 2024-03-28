@@ -10,31 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 24,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Mar 2024",
-                style: Theme.of(context)
-                    .textTheme
-                    .labelSmall!
-                    .copyWith(fontWeight: FontWeight.w500),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Image.asset(
-                  Assets.editIcon,
-                  height: 16,
-                ),
-              )
-            ],
-          ),
-        ),
+        const HomeHeader(),
         BudgetlyButtons.settingsButton(
           label: "All Money Assigned",
           backgroundColor: semiBlueColor,
@@ -44,35 +20,57 @@ class HomeScreen extends StatelessWidget {
           paddingSize: 18,
           icon: Icons.arrow_forward_ios,
         ),
-        ExpansionTile(
-          title: Text(
-            "Credit Card Payments",
-            style: Theme.of(context)
-                .textTheme
-                .labelSmall!
-                .copyWith(fontWeight: FontWeight.w500),
+        HomeTile(
+          title: 'Credit Card Payments',
+          data: {
+            'Christopher Credit': '2,000RM',
+          },
+        ),
+      ],
+    );
+  }
+}
+
+class HomeTile extends StatelessWidget {
+  final String title;
+  final Map<String, String> data;
+  const HomeTile({
+    super.key,
+    required this.title,
+    required this.data,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionTile(
+      title: Text(
+        title,
+        style: Theme.of(context)
+            .textTheme
+            .labelSmall!
+            .copyWith(fontWeight: FontWeight.w500),
+      ),
+      iconColor: Colors.white,
+      collapsedIconColor: Colors.white,
+      shape: const RoundedRectangleBorder(),
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(
+            vertical: 12,
+            horizontal: 24,
           ),
-          iconColor: Colors.white,
-          collapsedIconColor: Colors.white,
-          // trailing: Text(
-          //   "Available for Payment",
-          //   style:
-          //       Theme.of(context).textTheme.labelSmall!.copyWith(fontSize: 12),
-          // ),
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(
-                vertical: 12,
-                horizontal: 24,
-              ),
-              decoration: BoxDecoration(
-                color: semiBlueColor,
-              ),
-              child: Row(
+          decoration: BoxDecoration(
+            color: semiBlueColor,
+          ),
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: data.length,
+            itemBuilder: (context, index) {
+              return Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Christopher Credit",
+                    data.entries.elementAt(index).key,
                     style: Theme.of(context)
                         .textTheme
                         .labelSmall!
@@ -85,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(24),
                     ),
                     child: Text(
-                      "2,000RM",
+                      data.entries.elementAt(index).value,
                       style: Theme.of(context).textTheme.labelSmall!.copyWith(
                             fontWeight: FontWeight.w500,
                             color: Colors.black,
@@ -93,11 +91,46 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-            )
-          ],
-        ),
+              );
+            },
+          ),
+        )
       ],
+    );
+  }
+}
+
+class HomeHeader extends StatelessWidget {
+  const HomeHeader({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 24,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Mar 2024",
+            style: Theme.of(context)
+                .textTheme
+                .labelSmall!
+                .copyWith(fontWeight: FontWeight.w500),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Image.asset(
+              Assets.editIcon,
+              height: 16,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
