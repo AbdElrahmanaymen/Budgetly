@@ -23,29 +23,33 @@ class HomeScreen extends StatelessWidget {
         const HomeTile(
           title: 'Credit Card Payments',
           data: {
-            'Christopher Credit': '2,000RM',
+            'Christopher Credit': {
+              'Amount': 7000,
+              'Assigned': 2000,
+              'Type': 'Payments'
+            },
           },
         ),
         const HomeTile(
           title: 'Bills',
           data: {
-            'Rent': '700RM',
-            'Utilities': '700RM',
-            'Internet': '0RM',
+            'Rent': {'Amount': 700, 'Assigned': 700, 'Type': 'Bills'},
+            'Utilities': {'Amount': 700, 'Assigned': 700, 'Type': 'Bills'},
+            'Internet': {'Amount': 100, 'Assigned': 0, 'Type': 'Bills'},
           },
         ),
         const HomeTile(
           title: 'Needs',
           data: {
-            'Groceries': '0RM',
-            'Rideshare': '0RM',
-            'Train/Bus fare': '0RM',
+            'Groceries': {'Amount': 100, 'Assigned': 0, 'Type': 'Needs'},
+            'Rideshare': {'Amount': 200, 'Assigned': 0, 'Type': 'Needs'},
+            'Train/Bus fare': {'Amount': 100, 'Assigned': 0, 'Type': 'Needs'},
           },
         ),
         const HomeTile(
           title: 'Wants',
           data: {
-            'Entertainment': '0RM',
+            'Entertainment': {'Amount': 100, 'Assigned': 0, 'Type': 'Wants'},
           },
         ),
         Padding(
@@ -68,7 +72,7 @@ class HomeScreen extends StatelessWidget {
 
 class HomeTile extends StatelessWidget {
   final String title;
-  final Map<String, String> data;
+  final Map<String, Map> data;
   const HomeTile({
     super.key,
     required this.title,
@@ -90,43 +94,69 @@ class HomeTile extends StatelessWidget {
       shape: const RoundedRectangleBorder(),
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(
-            vertical: 12,
-            horizontal: 24,
-          ),
+          // padding: const EdgeInsets.symmetric(
+          //   vertical: 12,
+          //   horizontal: 24,
+          // ),
           decoration: BoxDecoration(
             color: semiBlueColor,
           ),
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: data.length,
-            itemExtent: 50,
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    data.entries.elementAt(index).key,
-                    style: Theme.of(context)
-                        .textTheme
-                        .labelSmall!
-                        .copyWith(fontWeight: FontWeight.w500),
+              final progress = data.entries.elementAt(index).value['Assigned'] /
+                  data.entries.elementAt(index).value['Amount'];
+              return Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                child: Column(children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        data.entries.elementAt(index).key,
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelSmall!
+                            .copyWith(fontWeight: FontWeight.w500),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        decoration: BoxDecoration(
+                          color: progress == 1
+                              ? greenColor
+                              : progress == 0
+                                  ? lightGreyColor
+                                  : Colors.yellow,
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                        child: Text(
+                          "${data.entries.elementAt(index).value['Assigned']}RM",
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelSmall!
+                              .copyWith(
+                                fontWeight: FontWeight.w500,
+                                color:
+                                    progress == 0 ? Colors.white : Colors.black,
+                              ),
+                        ),
+                      ),
+                    ],
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    decoration: BoxDecoration(
-                      color: Colors.yellow,
-                      borderRadius: BorderRadius.circular(24),
+                  if (data.entries.elementAt(index).value['Type'] !=
+                      'Payments') ...[
+                    const SizedBox(
+                      height: 8,
                     ),
-                    child: Text(
-                      data.entries.elementAt(index).value,
-                      style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black,
-                          ),
+                    LinearProgressIndicator(
+                      value: progress,
+                      color: greenColor,
                     ),
-                  ),
-                ],
+                  ],
+                ]),
               );
             },
           ),
