@@ -1,5 +1,5 @@
 import 'package:budgetly/infrastructure/style/colors.dart';
-import 'package:budgetly/presentation/widgets/settingsbutton.dart';
+import 'package:budgetly/presentation/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -12,7 +12,7 @@ class SettingsScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SettingsButton.customButton(
+          BudgetlyButtons.settingsButton(
             label: 'Edit Profile',
             icon: Icons.arrow_forward,
             backgroundColor: semiBlueColor,
@@ -22,7 +22,7 @@ class SettingsScreen extends StatelessWidget {
             context: context,
           ),
           const SizedBox(height: 16),
-          SettingsButton.customButton(
+          BudgetlyButtons.settingsButton(
             label: 'Change Password',
             icon: Icons.arrow_forward,
             backgroundColor: semiBlueColor,
@@ -32,7 +32,7 @@ class SettingsScreen extends StatelessWidget {
             context: context,
           ),
           const SizedBox(height: 16),
-          SettingsButton.customButton(
+          BudgetlyButtons.settingsButton(
             label: 'Language',
             icon: Icons.arrow_forward,
             backgroundColor: semiBlueColor,
@@ -42,7 +42,7 @@ class SettingsScreen extends StatelessWidget {
             context: context,
           ),
           const SizedBox(height: 16),
-          SettingsButton.customButton(
+          BudgetlyButtons.settingsButton(
             label: 'Log Out',
             backgroundColor: darkRedColor,
             onPressed: () {
