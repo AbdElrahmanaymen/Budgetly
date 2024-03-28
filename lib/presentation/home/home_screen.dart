@@ -48,6 +48,19 @@ class HomeScreen extends StatelessWidget {
             'Entertainment': '0RM',
           },
         ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 24,
+          ),
+          child: Text(
+            "Educational Content",
+            style: Theme.of(context)
+                .textTheme
+                .labelSmall!
+                .copyWith(fontWeight: FontWeight.w500),
+          ),
+        ),
       ],
     );
   }
