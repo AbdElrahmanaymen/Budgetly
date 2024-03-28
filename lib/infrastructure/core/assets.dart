@@ -15,8 +15,10 @@ class Assets {
       'assets/images/icons/calendar_active.png';
   static const String getStartedVector =
       'assets/images/vectors/get_started.png';
-  static const String appleLogo = 'assets/images/icons/apple_logo.svg';
-  static const String googleLogo = 'assets/images/icons/google_logo.svg';
-  static const String facebookLogo = 'assets/images/icons/facebook_logo.svg';
+  static const String appleLogo = 'assets/images/logo/apple.svg';
+  static const String googleLogo = 'assets/images/logo/google.svg';
+  static const String facebookLogo = 'assets/images/logo/facebook.svg';
+  static const String maybankLogo = 'assets/images/logo/maybank.png';
+  static const String visaLogo = 'assets/images/logo/visa.png';
   static const String editIcon = "assets/images/icons/edit.png";
 }
