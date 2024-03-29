@@ -13,7 +13,6 @@ class CameraScreen extends StatelessWidget {
     return Scaffold(
       body: BlocBuilder<CameraBloc, CameraState>(
         builder: (context, state) {
-          print(state);
           if (state is Initial) {
             return Center(
               child: CircularProgressIndicator(
