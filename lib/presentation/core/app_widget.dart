@@ -1,6 +1,7 @@
 import 'package:budgetly/infrastructure/style/theme.dart';
 import 'package:budgetly/presentation/accounts/choose_account_type_screen.dart';
 import 'package:budgetly/presentation/accounts/new_account_screen.dart';
+import 'package:budgetly/presentation/camera/camera_screen.dart';
 import 'package:budgetly/presentation/core/app_screen.dart';
 import 'package:budgetly/presentation/core/complete_profile_screen.dart';
 import 'package:budgetly/presentation/core/get_started_screen.dart';
@@ -28,6 +29,7 @@ Map<String, WidgetBuilder> routes = {
   '/NewAccountScreen': (context) => const NewAccountScreen(),
   '/ChooseAccountTypeScreen': (context) => const ChooseAccountTypeScreen(),
   '/NewExpenseScreen': (context) => const NewExpenseScreen(),
+  '/CameraScreen': (context) => const CameraScreen(),
 };
 
 class AppWidget extends StatelessWidget {
