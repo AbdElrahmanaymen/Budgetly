@@ -39,6 +39,7 @@ class AppScreen extends StatelessWidget {
           ),
           body: SafeArea(
             child: Container(
+              width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(16),

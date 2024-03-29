@@ -1,9 +1,5 @@
-import 'dart:ui';
-
-import 'package:budgetly/infrastructure/core/assets.dart';
 import 'package:budgetly/infrastructure/style/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BudgetlyButtons {
   static Widget iconButton({
@@ -67,7 +63,10 @@ class BudgetlyButtons {
           children: [
             Text(
               label,
-              style: labelStyle ?? Theme.of(context).textTheme.labelMedium!.copyWith(fontWeight: FontWeight.w500), // Use the provided labelStyle or fallback to default style
+              style: labelStyle ??
+                  Theme.of(context).textTheme.labelMedium!.copyWith(
+                      fontWeight: FontWeight
+                          .w500), // Use the provided labelStyle or fallback to default style
             ),
             if (icon != null) // Check if icon is provided
               Icon(

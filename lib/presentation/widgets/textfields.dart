@@ -41,12 +41,12 @@ class BudgetlyTextFields {
     );
   }
 
-  static Widget settingTextField({
-  required Widget icon, 
-  required String labelText, 
-  required String placeholder}) {
+  static Widget settingTextField(
+      {required Widget icon,
+      required String labelText,
+      required String placeholder}) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 30, left: 39, right: 39), 
+      padding: const EdgeInsets.only(bottom: 30, left: 39, right: 39),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.0),
@@ -58,12 +58,13 @@ class BudgetlyTextFields {
             labelText: labelText,
             floatingLabelBehavior: FloatingLabelBehavior.always,
             hintText: placeholder,
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
               fontSize: 16,
             ),
-            labelStyle: TextStyle(color: Colors.black),
+            labelStyle: const TextStyle(color: Colors.black),
             border: InputBorder.none,
-            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), 
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           ),
         ),
       ),

@@ -11,15 +11,15 @@ class AccountsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
-        AccountsSlider(),
-        SizedBox(
+        const AccountsSlider(),
+        const SizedBox(
           height: 24,
         ),
-        AccountButtonsSection(),
-        SizedBox(
+        const AccountButtonsSection(),
+        const SizedBox(
           height: 24,
         ),
         Padding(
