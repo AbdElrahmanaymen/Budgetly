@@ -7,6 +7,7 @@ import 'package:budgetly/presentation/core/get_started_screen.dart';
 import 'package:budgetly/presentation/core/otp_screen.dart';
 import 'package:budgetly/presentation/core/splash_screen.dart';
 import 'package:budgetly/presentation/core/welcome_screen.dart';
+import 'package:budgetly/presentation/new_expense/new_expense_screen.dart';
 import 'package:budgetly/presentation/notification/notification_screen.dart';
 import 'package:budgetly/presentation/settings/screens/change_password_screen.dart';
 import 'package:budgetly/presentation/settings/screens/edit_profile_screen.dart';
@@ -26,6 +27,7 @@ Map<String, WidgetBuilder> routes = {
   '/NotificationScreen': (context) => const NotificationScreen(),
   '/NewAccountScreen': (context) => const NewAccountScreen(),
   '/ChooseAccountTypeScreen': (context) => const ChooseAccountTypeScreen(),
+  '/NewExpenseScreen': (context) => const NewExpenseScreen(),
 };
 
 class AppWidget extends StatelessWidget {

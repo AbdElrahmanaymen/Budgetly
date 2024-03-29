@@ -56,7 +56,8 @@ class AppScreen extends StatelessWidget {
                                   height: 32,
                                 ),
                                 TextButton.icon(
-                                  onPressed: () {},
+                                  onPressed: () => Navigator.pushNamed(
+                                      context, '/NewExpenseScreen'),
                                   icon: const Icon(
                                     Icons.add,
                                     color: Colors.white,
