@@ -26,7 +26,79 @@ class AppScreen extends StatelessWidget {
                     height: 24,
                     width: 24,
                   ),
-                  onPressed: () {},
+                  onPressed: () async {
+                    return showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Dialog(
+                          child: Container(
+                            height: 300,
+                            width: 300,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(14),
+                              color: darkBlueColor,
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 32),
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Add New Expense",
+                                  style:
+                                      Theme.of(context).textTheme.labelMedium,
+                                ),
+                                const SizedBox(
+                                  height: 32,
+                                ),
+                                Divider(
+                                  color: offWhiteColor,
+                                ),
+                                const SizedBox(
+                                  height: 32,
+                                ),
+                                TextButton.icon(
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
+                                  label: Text(
+                                    "Manually Create",
+                                    style:
+                                        Theme.of(context).textTheme.labelSmall,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 24,
+                                ),
+                                TextButton.icon(
+                                  style: TextButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    backgroundColor: semiBlueColor,
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 21,
+                                      vertical: 12,
+                                    ),
+                                  ),
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                    Icons.camera_alt_outlined,
+                                    color: Colors.white,
+                                  ),
+                                  label: Text(
+                                    "Scan Receipt",
+                                    style:
+                                        Theme.of(context).textTheme.labelSmall,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
                 )
               : null,
           bottomNavigationBar: budgetlyNavBar(
