@@ -2,7 +2,6 @@ import 'package:budgetly/infrastructure/core/assets.dart';
 import 'package:budgetly/infrastructure/style/colors.dart';
 import 'package:budgetly/presentation/widgets/textfields.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});

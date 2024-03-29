@@ -1,4 +1,9 @@
+import 'dart:ui';
+
+import 'package:budgetly/infrastructure/core/assets.dart';
+import 'package:budgetly/infrastructure/style/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BudgetlyButtons {
   static Widget iconButton({
@@ -74,6 +79,41 @@ class BudgetlyButtons {
           ],
         ),
       ),
+    );
+  }
+
+  static Widget accountIconBtn({
+    required BuildContext context,
+    required VoidCallback onPressed,
+    required Widget icon,
+    required String title,
+  }) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 69,
+          width: 69,
+          child: IconButton(
+            style: IconButton.styleFrom(
+              backgroundColor: semiBlueColor,
+              padding: const EdgeInsets.all(16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            onPressed: onPressed,
+            icon: icon,
+          ),
+        ),
+        const SizedBox(
+          height: 4,
+        ),
+        Text(
+          title,
+          style:
+              Theme.of(context).textTheme.labelMedium!.copyWith(fontSize: 12),
+        ),
+      ],
     );
   }
 }
