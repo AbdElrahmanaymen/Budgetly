@@ -12,7 +12,7 @@ class LanguagesScreen extends StatelessWidget {
         centerTitle: false,
         title: Text(
           'Language',
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 26),
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 24),
         ),
         iconTheme: const IconThemeData(
           color: Colors.white,

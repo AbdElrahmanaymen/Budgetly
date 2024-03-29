@@ -25,6 +25,7 @@ class NavBarState with _$NavBarState {
             icon: Icon(
               Icons.add,
             ),
+            routeName: '/NewAccountScreen',
           ),
           BudgetlyAppBar(
             title: 'Calendar',

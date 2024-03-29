@@ -67,7 +67,10 @@ class BudgetlyButtons {
           children: [
             Text(
               label,
-              style: labelStyle ?? Theme.of(context).textTheme.labelMedium!.copyWith(fontWeight: FontWeight.w500), // Use the provided labelStyle or fallback to default style
+              style: labelStyle ??
+                  Theme.of(context).textTheme.labelMedium!.copyWith(
+                      fontWeight: FontWeight
+                          .w500), // Use the provided labelStyle or fallback to default style
             ),
             if (icon != null) // Check if icon is provided
               Icon(
@@ -112,6 +115,57 @@ class BudgetlyButtons {
               Theme.of(context).textTheme.labelMedium!.copyWith(fontSize: 12),
         ),
       ],
+    );
+  }
+
+  static Widget AccountsButton({
+    required String label,
+    TextStyle? labelStyle,
+    required Color backgroundColor,
+    IconData? icon,
+    required VoidCallback onPressed,
+    required BuildContext context,
+    bool roundedButton = true,
+    double paddingSize = 18,
+    double topLeftRadius = 16.0,
+    double topRightRadius = 16.0,
+    double bottomLeftRadius = 16.0,
+    double bottomRightRadius = 16.0,
+  }) {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor,
+          padding: EdgeInsets.all(paddingSize),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(topLeftRadius),
+              topRight: Radius.circular(topRightRadius),
+              bottomLeft: Radius.circular(bottomLeftRadius),
+              bottomRight: Radius.circular(bottomRightRadius),
+            ),
+          ),
+        ),
+        onPressed: onPressed,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              label,
+              style: labelStyle ??
+                  Theme.of(context).textTheme.labelSmall!.copyWith(
+                      fontWeight: FontWeight
+                          .w500), 
+            ),
+            if (icon != null) 
+              Icon(
+                icon,
+                color: Colors.white,
+              ),
+          ],
+        ),
+      ),
     );
   }
 }
