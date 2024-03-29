@@ -18,6 +18,7 @@ dependencies:
   dartz: ^0.10.1
   dropdown_button2: ^2.3.9
   flutter_svg: ^2.0.10+1
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -36,6 +37,7 @@ flutter:
     - assets/images/icons/
     - assets/images/vectors/
     - assets/images/countries_flags/
+    - assets/images/logo/
 
   fonts:
     - family: Syntha
