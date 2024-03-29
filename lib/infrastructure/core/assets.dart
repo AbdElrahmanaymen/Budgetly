@@ -28,4 +28,5 @@ class Assets {
   static const String scoreIcon = 'assets/images/icons/score.png';
   static const String deleteIcon = 'assets/images/icons/delete.png';
   static const String foodIcon = 'assets/images/icons/food.png';
+  static const String passwordIcon = 'assets/images/icons/password.png';
 }
