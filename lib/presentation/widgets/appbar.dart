@@ -1,5 +1,7 @@
 import 'package:budgetly/infrastructure/style/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BudgetlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -67,26 +69,115 @@ class BudgetlyAppBar extends StatelessWidget implements PreferredSizeWidget {
                     )
                   ],
                 )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      title!,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    (icon != null)
-                        ? IconButton(
-                            style: IconButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              padding: EdgeInsets.zero,
+              : (title == 'Calendar')
+                  ? Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            IconButton.outlined(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.arrow_drop_down,
+                                color: Colors.white,
+                              ),
                             ),
-                            onPressed: () =>
-                                Navigator.pushNamed(context, routeName!),
-                            icon: icon!,
-                          )
-                        : const SizedBox(),
-                  ],
-                ),
+                            Column(
+                              children: [
+                                Text(
+                                  "Mar 2024",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge!
+                                      .copyWith(fontSize: 26),
+                                ),
+                                Text(
+                                  "Wed, 8 Mar 2024",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall!
+                                      .copyWith(
+                                        color: offWhiteColor,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            IconButton.outlined(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.calendar_month_outlined,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        Flexible(
+                          child: ListView.builder(
+                            // reverse: true,
+                            itemCount: 30,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 16),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color:
+                                            index == 2 ? lightGreenColor : null,
+                                      ),
+                                      child: Text(
+                                        "${index + 1}",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelSmall!
+                                            .copyWith(fontSize: 20),
+                                      ),
+                                    ),
+                                    Text(
+                                      "Mon",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleSmall!
+                                          .copyWith(color: offWhiteColor),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          title!,
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                        (icon != null)
+                            ? IconButton(
+                                style: IconButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  padding: EdgeInsets.zero,
+                                ),
+                                onPressed: () =>
+                                    Navigator.pushNamed(context, routeName!),
+                                icon: icon!,
+                              )
+                            : const SizedBox(),
+                      ],
+                    ),
         ),
       );
     } else {
@@ -95,5 +186,7 @@ class BudgetlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => title == 'Calendar'
+      ? const Size.fromHeight(160)
+      : const Size.fromHeight(100);
 }
