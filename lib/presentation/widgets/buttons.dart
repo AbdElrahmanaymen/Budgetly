@@ -37,12 +37,13 @@ class BudgetlyButtons {
 
   static Widget settingsButton({
     required String label,
+    TextStyle? labelStyle,
     required Color backgroundColor,
     IconData? icon, // Make the icon parameter optional
     required VoidCallback onPressed,
     required BuildContext context,
     bool roundedButton = true,
-    double paddingSize = 12,
+    double paddingSize = 16,
   }) {
     return SizedBox(
       width: double.infinity,
@@ -61,10 +62,7 @@ class BudgetlyButtons {
           children: [
             Text(
               label,
-              style: Theme.of(context)
-                  .textTheme
-                  .labelMedium!
-                  .copyWith(fontWeight: FontWeight.w500),
+              style: labelStyle ?? Theme.of(context).textTheme.labelMedium!.copyWith(fontWeight: FontWeight.w500), // Use the provided labelStyle or fallback to default style
             ),
             if (icon != null) // Check if icon is provided
               Icon(
