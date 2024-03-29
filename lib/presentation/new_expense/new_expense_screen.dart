@@ -34,7 +34,6 @@ class NewExpenseScreen extends StatelessWidget {
               height: 24,
             ),
             Container(
-              // padding: const EdgeInsets.all(16),
               margin: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
                 color: semiBlueColor,
@@ -71,7 +70,116 @@ class NewExpenseScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(
+                color: semiBlueColor,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextButton.icon(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(16),
+                    ),
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.payment,
+                      color: Colors.white,
+                    ),
+                    label: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Choose Payment Method",
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelSmall!
+                              .copyWith(fontWeight: FontWeight.w500),
+                        ),
+                        const Icon(Icons.arrow_forward_ios,
+                            color: Colors.white),
+                      ],
+                    ),
+                  ),
+                  const Divider(
+                    color: Colors.black,
+                  ),
+                  TextButton.icon(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(16),
+                    ),
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.category_outlined,
+                      color: Colors.white,
+                    ),
+                    label: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Choose Category",
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelSmall!
+                              .copyWith(fontWeight: FontWeight.w500),
+                        ),
+                        const Icon(Icons.arrow_forward_ios,
+                            color: Colors.white),
+                      ],
+                    ),
+                  ),
+                  const Divider(
+                    color: Colors.black,
+                  ),
+                  TextButton.icon(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(16),
+                    ),
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.date_range_outlined,
+                      color: Colors.white,
+                    ),
+                    label: Text(
+                      "Choose Date",
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelSmall!
+                          .copyWith(fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 39),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: semiBlueColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Text(
+                    'Save',
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
