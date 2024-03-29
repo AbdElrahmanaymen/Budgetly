@@ -60,7 +60,9 @@ class NewAccountScreen extends StatelessWidget {
                   labelStyle: Theme.of(context).textTheme.labelSmall,
                   backgroundColor: semiBlueColor,
                   icon: Icons.keyboard_arrow_right_rounded,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/ChooseAccountTypeScreen');
+                  },
                   context: context,
                 ),
                 const SizedBox(height: 16),
