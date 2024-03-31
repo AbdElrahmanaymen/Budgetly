@@ -150,11 +150,12 @@ class BudgetlyButtons {
             Text(
               label,
               style: labelStyle ??
-                  Theme.of(context).textTheme.labelSmall!.copyWith(
-                      fontWeight: FontWeight
-                          .w500), 
+                  Theme.of(context)
+                      .textTheme
+                      .labelSmall!
+                      .copyWith(fontWeight: FontWeight.w500),
             ),
-            if (icon != null) 
+            if (icon != null)
               Icon(
                 icon,
                 color: Colors.white,

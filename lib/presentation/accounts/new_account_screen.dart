@@ -1,5 +1,6 @@
 import 'package:budgetly/infrastructure/style/colors.dart';
 import 'package:budgetly/presentation/widgets/buttons.dart';
+import 'package:budgetly/presentation/widgets/textfields.dart';
 import 'package:flutter/material.dart';
 
 class NewAccountScreen extends StatelessWidget {
@@ -33,23 +34,19 @@ class NewAccountScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                BudgetlyButtons.AccountsButton(
+                BudgetlyTextFields.AccountsTextField(
                   label: 'Nickname',
                   labelStyle: Theme.of(context).textTheme.labelSmall,
                   backgroundColor: semiBlueColor,
-                  onPressed: () {},
                   context: context,
                   bottomLeftRadius: 0.0,
                   bottomRightRadius: 0.0,
                 ),
                 const SizedBox(height: 1),
-                BudgetlyButtons.AccountsButton(
+                BudgetlyTextFields.AccountsTextField(
                   label: 'Current Account Balance',
                   labelStyle: Theme.of(context).textTheme.labelSmall,
                   backgroundColor: semiBlueColor,
-                  onPressed: () {
-                    Icons.arrow_forward;
-                  },
                   context: context,
                   topLeftRadius: 0.0,
                   topRightRadius: 0.0,

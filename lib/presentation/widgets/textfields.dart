@@ -70,4 +70,55 @@ class BudgetlyTextFields {
       ),
     );
   }
+
+    static Widget AccountsTextField({
+    required String label,
+    TextStyle? labelStyle,
+    required Color backgroundColor,
+    required BuildContext context,
+    double paddingSize = 4,
+    double horizontalPadding = 16,
+    double topLeftRadius = 16.0,
+    double topRightRadius = 16.0,
+    double bottomLeftRadius = 16.0,
+    double bottomRightRadius = 16.0,
+  }) {
+    return SizedBox(
+      width: double.infinity,
+      child: Container(
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(topLeftRadius),
+            topRight: Radius.circular(topRightRadius),
+            bottomLeft: Radius.circular(bottomLeftRadius),
+            bottomRight: Radius.circular(bottomRightRadius),
+          ),
+        ),
+        padding: EdgeInsets.all(paddingSize),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+                child: TextField(
+                  style: labelStyle,
+                  decoration: InputDecoration(
+                    hintText: label,
+                    hintStyle: labelStyle,
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+
+
+
 }
