@@ -19,6 +19,8 @@ dependencies:
   dropdown_button2: ^2.3.9
   flutter_svg: ^2.0.10+1
   carousel_slider: ^4.2.1
+  camera: ^0.10.5+9
+  lottie: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +40,7 @@ flutter:
     - assets/images/vectors/
     - assets/images/countries_flags/
     - assets/images/logo/
+    - assets/lottie/
 
   fonts:
     - family: Syntha

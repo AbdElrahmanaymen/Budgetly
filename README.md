@@ -17,3 +17,6 @@ Welcome to the future of personal finance management with Budgetly. Our zero-bas
 # Demo
 https://github.com/AbdElrahmanaymen/Budgetly/assets/30832681/8e49e76f-ae59-434b-8f20-cce8b08ac344
 
+# Links
+- [Figma Design](https://www.figma.com/file/p8XMqf8xmEWY0VVpAshWr3/Budgetly?type=design&node-id=80%3A769&mode=design&t=izlqDINfOCjRRf4E-1)
+- [Pitch Deck Presentation](https://docsend.com/view/nex5qtei5j2wpt4j)

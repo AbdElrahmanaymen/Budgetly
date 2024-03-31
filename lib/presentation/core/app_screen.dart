@@ -56,7 +56,8 @@ class AppScreen extends StatelessWidget {
                                   height: 32,
                                 ),
                                 TextButton.icon(
-                                  onPressed: () {},
+                                  onPressed: () => Navigator.pushNamed(
+                                      context, '/NewExpenseScreen'),
                                   icon: const Icon(
                                     Icons.add,
                                     color: Colors.white,
@@ -81,7 +82,8 @@ class AppScreen extends StatelessWidget {
                                       vertical: 12,
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () => Navigator.pushNamed(
+                                      context, '/CameraScreen'),
                                   icon: const Icon(
                                     Icons.camera_alt_outlined,
                                     color: Colors.white,

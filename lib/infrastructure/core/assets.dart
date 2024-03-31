@@ -29,4 +29,7 @@ class Assets {
   static const String deleteIcon = 'assets/images/icons/delete.png';
   static const String foodIcon = 'assets/images/icons/food.png';
   static const String passwordIcon = 'assets/images/icons/password.png';
+  static const String merchantIcon = 'assets/images/icons/merchant.png';
+  static const String descriptionIcon = 'assets/images/icons/description.png';
+  static const String errorLottie = "assets/lottie/error.json";
 }
